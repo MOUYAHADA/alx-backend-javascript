@@ -1,4 +1,3 @@
-export default function createReportObject(employeesList) {
-  const getNumberOfDepartments = () => Object.keys(employeesList).length;
-  return { allEmployees: employeesList, getNumberOfDepartments };
+export default function createIteratorObject(report) {
+  return Object.values(report.allEmployees).flat();
 }
