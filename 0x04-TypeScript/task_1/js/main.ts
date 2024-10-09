@@ -18,3 +18,31 @@ interface printTeacherFunction {
 const printTeacher: printTeacherFunction = function (firstName, lastName) {
   return `${firstName[0].toUpperCase()}. ${lastName}`;
 };
+
+interface StudentInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework: () => string;
+  displayName: () => string
+}
+
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+
+class StudentClass implements StudentInterface {
+  constructor(
+    public firstName: string, public lastName: string
+  ) { }
+  
+  workOnHomework(): string {
+    return "Currently working"
+  };
+  
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+const createSudent: StudentConstructor = StudentClass;
