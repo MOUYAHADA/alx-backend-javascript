@@ -15,9 +15,6 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-const printTeacher: printTeacherFunction = function (firstName, lastName) {
-  return `${firstName[0].toUpperCase()}. ${lastName}`;
-};
 
 interface StudentInterface {
   firstName: string;
@@ -30,6 +27,9 @@ interface StudentConstructor {
   new (firstName: string, lastName: string): StudentClass;
 }
 
+const printTeacher: printTeacherFunction = function (firstName, lastName) {
+  return `${firstName[0].toUpperCase()}. ${lastName}`;
+};
 
 class StudentClass implements StudentInterface {
   constructor(
@@ -46,3 +46,5 @@ class StudentClass implements StudentInterface {
 }
 
 const createSudent: StudentConstructor = StudentClass;
+
+
